@@ -1,4 +1,5 @@
 ﻿using swouch.extension.propertyAttribute.noNull;
+using swouch.extension.runtime.ui.animate.translate;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace swouch.entity
         //refs
         [SerializeField, NoNull] private Rigidbody _rigidBody = default;
         [SerializeField, NoNull] private PlayerInput _input = default;
+        [SerializeField, NoNull] private AnimateRotate _rotate = default;
 
         public void CustomFixedUpdate()
         {
@@ -29,9 +31,15 @@ namespace swouch.entity
                     multiplierInverse = _speedInverseMultiplier;
                 }
                 MoveAction(direction, _speed * multiplierInverse);
+
+                bool forward = _input.InputHoriz >= 0;
+                _rotate.SetFinalRotate(new Vector3(0, 0, 360 * ((forward) ? -1 : 1)));
+                _rotate.Animate();
+                _rotate.SetLoop(true);
             }
             else
             {
+                _rotate.SetLoop(false);
                 Vector3 inverseDirection = new Vector3(-_rigidBody.velocity.x, 0, 0);
                 MoveAction(inverseDirection, _slowDownSpeed);
             }
