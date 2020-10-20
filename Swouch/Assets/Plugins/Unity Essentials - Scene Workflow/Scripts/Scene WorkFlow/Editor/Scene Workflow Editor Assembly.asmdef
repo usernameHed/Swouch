@@ -1,0 +1,18 @@
+{
+    "name": "SceneWorkflowEditorAssembly",
+    "references": [
+        "GUID:877e22d76605a02428beaad5d5fb8d68",
+        "GUID:63aaff812f891dc4faa7d6018e4ac45b"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
