@@ -324,8 +324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waitTime: 1
-  _speed: 300
+  _speed: 600
   _firstKick: 2000
+  _killIfSlow: 0.01
   _animateTimeLine: {fileID: 2692104263687201988}
   _rigidbody: {fileID: 7501755877233985008}
   _target: {fileID: 0}

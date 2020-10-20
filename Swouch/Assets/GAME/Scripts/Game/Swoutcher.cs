@@ -11,6 +11,7 @@ namespace swouch.entity
         [SerializeField] private float _waitTime = 1f;
         [SerializeField] private float _speed = 1f;
         [SerializeField] private float _firstKick = 1f;
+        [SerializeField] private float _killIfSlow = 1f;
         [SerializeField] private AnimateTimeLine _animateTimeLine = default;
         [SerializeField] private Rigidbody _rigidbody = default;
         [SerializeField] private Transform _target;
@@ -28,6 +29,7 @@ namespace swouch.entity
             _rigidbody.transform.LookAt(_target.transform);
             _waitBeforeAttack.StartCoolDown(_waitTime);
             _animateTimeLine.Animate();
+            Destroy(gameObject, 10f);
         }
 
         private void FixedUpdate()
